@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root "top#index"
+  get "about" => "top#about", as: "about"
+
+  1.upto(18) do |n|
+    get "lesson/step#{n}(/:name)" => "lesson#step#{n}"
+  end
 end
